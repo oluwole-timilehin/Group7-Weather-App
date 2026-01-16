@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-image: url("https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327253/bg-weather_wrtd8l.jpg");
+  min-height: 100vh; /* Forces body to be at least as tall as the screen */
+  background-size: cover; /* Ensures image covers the whole screen */
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.5s ease-in-out;
+  font-size: 15px;
+  color: #ffff;
+  height: 100vh;
+  padding: 2rem 0 2rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+#loading {
+  position: absolute;
+  display: none;
+  height: 100vh;
+  width: 100%;
+  margin: -2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0.5;
+  background: rgba(240, 248, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+.content {
+  width: 100%;
+  height: 100vh;
+  width: 60%;
+  flex-wrap: wrap;
+}
+h1 {
+  font-size: 6rem;
+  font-weight: 600;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+h3 {
+  font-size: 1.5rem;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+.degree {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.cloud {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  justify-items: center;
+  height: 10vh;
+}
+.logo {
+  width: 100px;
+  height: 70px;
+}
+.right {
+  overflow-y: auto;
+  width: 40%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  gap: 3rem;
+  padding: 1rem 1rem 2rem;
+  border-left: 3px solid grey;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+  padding: 1rem 0;
+  position: relative;
+}
+.search-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  border-style: none;
+  color: #ffffff;
+}
+.search-input::placeholder {
+  color: #d3d3d3;
+}
+.search-icon {
+  cursor: pointer;
+}
+#cityList {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Right below the input */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* limits height */
+  overflow-y: auto; /* adds scrollbar if list is long */
+  z-index: 100; /* stays on top of other elements */
+}
+
+#cityList li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  color: grey;
+}
+
+#cityList li:hover {
+  background-color: #f0f0f0; /* Grey background on hover */
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.border {
+  border-bottom: 1.5px solid #ffffff;
+}
+.snow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sicon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.grey {
+  color: #d3d3d3;
+  font-size: 13px;
+}
+
+/* =========================================
+   RESPONSIVE FIXES (Combined)
+   ========================================= */
+
+/* TABLET */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    /* background-image: url("https://res.cloudinary.com/di8aoioek/image/upload/v1768461458/bg-weather_l3lbnl.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    padding: 1.5rem;
+
+    /* Layout Fix: Stack vertical & allow scroll */
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content {
+    /* Layout Fix: Full width on tablet */
+    width: 100%;
+    height: auto;
+  }
+
+  .left {
+    width: 100%;
+    /* Spacing Fix: Remove space-between forcing */
+    height: auto;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .right {
+    width: 100%;
+    border-left: none;
+    margin-top: 2rem;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .degree {
+    gap: 0.7rem;
+  }
+
+  .cloud {
+    width: 75px;
+    height: 75px;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .snow {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  body {
+    /* background-image: url("https://res.cloudinary.com/di8aoioek/image/upload/v1768434942/bg-weather_1_g9wcq7.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    padding: 1rem;
+
+    /* Layout Fix: Stack vertical & allow scroll */
+    flex-direction: column;
+    height: auto;
+  }
+
+  .content {
+    /* Layout Fix: Full width on mobile */
+    width: 100%;
+    height: auto;
+  }
+
+  .left {
+    width: 100%;
+    /* Spacing Fix: Remove space-between forcing */
+    height: auto;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .right {
+    width: 100%;
+    border-left: none;
+    margin-top: 2rem;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .degree {
+    gap: 0.5rem;
+  }
+
+  .cloud {
+    width: 60px;
+    height: 85px;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .snow {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App UI</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div id="loading">
+      <creattie-embed
+        src="https://d1jj76g3lut4fe.cloudfront.net/saved_colors/139426/mBoazc2a2Zw4DW94.json"
+        delay="1"
+        speed="100"
+        frame_rate="24"
+        stroke_width="7.5"
+        trigger="loop"
+        style="width: 150px; background-color: "
+      >
+      </creattie-embed>
+      <script
+        src="https://creattie.com/js/embed.js?id=3efa1fcb5d85991e845a"
+        defer
+      ></script>
+    </div>
+    <main class="content">
+      <div class="left">
+        <div class="logo">
+          <img
+            src="https://res.cloudinary.com/dxclekodi/image/upload/v1768146232/techcrush_logo_v6r8n4.png"
+            alt="logo"
+            class="logo"
+          />
+        </div>
+
+        <div class="degree">
+          <h1><span id="tempToUi">--</span>&deg;</h1>
+          <div class="txt">
+            <h2 id="location">--</h2>
+            <p id="dateDisplay">--</p>
+          </div>
+          <div id="icon" class="cloud"></div>
+        </div>
+      </div>
+    </main>
+    <div class="right">
+      <div class="header">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search Location...."
+          class="search-input"
+        />
+        <ul id="cityList"></ul>
+
+        <img
+          src="https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327250/fa_search_sasb5d.svg"
+          alt="search"
+          class="search-icon"
+          id="searchLocation"
+        />
+      </div>
+      <!-- <h4 id="loading">Weather Details..</h4> -->
+
+      <div class="temp">
+        <h3 id="WeatherStatus">---</h3>
+        <div class="text">
+          <span class="grey"> Temp Max</span>
+          <div class="icon">
+            <p><span id="maxTemp">--</span>&deg;</p>
+            <img
+              src="https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327252/Vector_c1dayv.svg"
+              alt=""
+              class="thermo"
+            />
+          </div>
+        </div>
+        <div class="text">
+          <span class="grey"> Temp Min</span>
+          <div class="icon">
+            <p><span id="minTemp">--</span>&deg;</p>
+            <img
+              src="https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327250/Vector-1_tnsca9.svg"
+              alt=""
+              class="thermo"
+            />
+          </div>
+        </div>
+        <div class="text">
+          <span class="grey"> Humidity</span>
+          <div class="icon">
+            <p><span id="humidity">--</span>%</p>
+            <img
+              src="https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327252/outline_2_cmerjr.svg"
+              alt=""
+              class="thermo"
+            />
+          </div>
+        </div>
+        <div class="text">
+          <span class="grey"> Cloudy</span>
+          <div class="icon">
+            <p><span id="cloudy">--</span>%</p>
+            <img
+              src="https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327250/outline-1_wnf6nc.svg"
+              alt=""
+              class="thermo"
+            />
+          </div>
+        </div>
+        <div class="text">
+          <span class="grey"> Wind</span>
+          <div class="icon">
+            <p><span id="wind">--</span>km/h</p>
+            <img
+              src="https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327251/outline-2_hlxt4w.svg"
+              alt=""
+              class="thermo"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="border"></div>
+      <h4>Forecast</h4>
+      <div class="snow">
+        <div class="sicon">
+          <div id="icon1" class="cloud"></div>
+
+          <div class="ttxt">
+            <p><span id="pr">--</span></p>
+            <span id="prrr" class="grey">Snow</span>
+          </div>
+        </div>
+        <p><span id="prr">--</span>&deg;</p>
+      </div>
+      <div class="snow">
+        <div class="sicon">
+          <div id="icon2" class="cloud"></div>
+
+          <div class="ttxt">
+            <p><span id="pr1">--</span></p>
+            <span id="pr111" class="grey">Snow</span>
+          </div>
+        </div>
+        <p><span id="pr11">--</span>&deg;</p>
+      </div>
+      <div class="snow">
+        <div class="sicon">
+          <div id="icon3" class="cloud"></div>
+
+          <div class="ttxt">
+            <p><span id="pr2">--</span></p>
+            <span id="pr222" class="grey">Snow</span>
+          </div>
+        </div>
+        <p><span id="pr22">--</span>&deg;</p>
+      </div>
+
+      <div class="snow">
+        <div class="sicon">
+          <div id="icon4" class="cloud"></div>
+
+          <div class="ttxt">
+            <p><span id="pr3">--</span></p>
+            <span id="pr333" class="grey">Snow</span>
+          </div>
+        </div>
+        <p><span id="pr33">--</span>&deg;</p>
+      </div>
+      <div class="snow">
+        <div class="sicon">
+          <div id="icon5" class="cloud"></div>
+
+          <div class="ttxt">
+            <p><span id="pr4">--</span></p>
+            <span id="pr444" class="grey">Snow</span>
+          </div>
+        </div>
+        <p><span id="pr44">--</span>&deg;</p>
+      </div>
+      <div class="snow">
+        <div class="sicon">
+          <div id="icon6" class="cloud"></div>
+
+          <div class="ttxt">
+            <p><span id="pr5">--</span></p>
+            <span id="pr555" class="grey">Snow</span>
+          </div>
+        </div>
+        <p><span id="pr55">--</span>&deg;</p>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
