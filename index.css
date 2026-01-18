@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: teal;
+  background-color: teal;
   min-height: 100vh; /* Forces body to be at least as tall as the screen */
   background-size: cover; /* Ensures image covers the whole screen */
   background-repeat: no-repeat;
