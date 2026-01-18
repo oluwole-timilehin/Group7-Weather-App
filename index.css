@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url("https://res.cloudinary.com/dvwo6ltjs/image/upload/v1768327253/bg-weather_wrtd8l.jpg");
+  background-image: teal;
   min-height: 100vh; /* Forces body to be at least as tall as the screen */
   background-size: cover; /* Ensures image covers the whole screen */
   background-repeat: no-repeat;
